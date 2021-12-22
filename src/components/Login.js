@@ -1,5 +1,3 @@
-import Landing from "../containers/Landing"
-
 const Login = () => {
     return (
         <h1>Hello World</h1>

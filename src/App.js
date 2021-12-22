@@ -2,7 +2,8 @@ import './App.css';
 import Landing from './containers/Landing';
 import Signup from './components/Signup';
 import Login from './components/Login';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
