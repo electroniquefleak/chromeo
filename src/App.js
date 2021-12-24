@@ -1,4 +1,5 @@
 import './App.css';
+import Dash from './containers/Dash';
 import Landing from './containers/Landing';
 import Signup from './components/Signup';
 import Login from './components/Login';
@@ -11,6 +12,7 @@ function App() {
     <Route path="/" element={<Landing />} />
     <Route path="/signup" element={<Signup />} />
     <Route path="/login" element={<Login />} />
+    <Route path="/dash" element={<Dash />} />
   </Routes>
   );
 }
