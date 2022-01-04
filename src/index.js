@@ -8,11 +8,12 @@ import { BrowserRouter } from 'react-router-dom';
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from "redux-thunk";
 import playlistReducer from './reducers/playlistReducer';
+import colorsReducer from './reducers/colorsReducer';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 const rootReducer = combineReducers({
-
+    colors: colorsReducer,
     playlist: playlistReducer
   }
 );

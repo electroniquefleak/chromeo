@@ -1,16 +1,12 @@
 import fetchTracks from "../actions/fetchTracks";
+import toggleCircle from '../actions/toggleCircle'
 import { connect } from "react-redux";
 
-const ColorCircle = ({ hex, isSelected=false, fetchTracks }) => {
+const ColorCircle = ({ id, hex, fetchTracks}) => {
     const handleToggle = () => {
-        if (isSelected) {
-            // remove the color and change the playlist
-        } else {
-            // add the color and change the playlist
-            fetchTracks();
-        }
+        console.log(id);
     }
     return <span className="colorCircle" style={{backgroundColor: hex}} onClick={handleToggle}></span>
 }
 
-export default connect(null, {fetchTracks})(ColorCircle);
+export default connect(null, {fetchTracks, toggleCircle})(ColorCircle);
