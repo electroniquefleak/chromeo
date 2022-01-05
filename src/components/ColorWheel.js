@@ -9,11 +9,11 @@ const ColorWheel = ({colors}) => {
 
     return (
         <>
-            <h2>Color Wheel:</h2>
+            <h2 className="wheelHeader">Color Wheel:</h2>
             <Paper className="wheel" elevation={10} square={false}>
             {unselectedColors}
             </Paper>
-            <h2>Easel:</h2>
+            <h2 className="easelHeader">Easel:</h2>
             <Paper className="easel" elevation={10}>
             {selectedColors}
             </Paper>

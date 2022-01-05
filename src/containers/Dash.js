@@ -4,7 +4,7 @@
 
 import ColorWheel from "../components/ColorWheel";
 import Navbar from "../components/Navbar";
-import Playlist from "./Playlist";
+import PlaylistContainer from "./PlaylistContainer";
 
 // BLUE: Soft Pop, Sad, Emotional, Chill
 // RED: Angry, Rock, Punk
@@ -16,15 +16,15 @@ import Playlist from "./Playlist";
 //User can save to Chromeo library.
 
 //Dash State -- array of colors, playlist object (name, spotify id, array of tracks)
-
+const tracks = [{"track"}]
 const Dash = () => {
     const playlistData = {}; //mocked state data (TODO)
-    const showPlayList = false // mocked boolean, real: playlistData && playlistData.tracks.length
+    const showPlayListContainer = false // mocked boolean, real: playlistData && playlistData.tracks.length
     return (
         <>
             <Navbar />
             <ColorWheel />
-            {showPlayList &&  <Playlist />}
+            {showPlayListContainer &&  <PlaylistContainer />}
         </>
     );
 }
