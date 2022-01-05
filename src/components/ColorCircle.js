@@ -2,9 +2,15 @@ import fetchTracks from "../actions/fetchTracks";
 import toggleCircle from '../actions/toggleCircle'
 import { connect } from "react-redux";
 
-const ColorCircle = ({ id, hex, fetchTracks}) => {
+const ColorCircle = ({ id, hex, enabled, toggleCircle, fetchTracks}) => {
     const handleToggle = () => {
-        console.log(id);
+        if (enabled) {
+            toggleCircle(id);
+        //also fetch the tracks (TODO)
+        } else {
+            // use the Snackbar to tell the user it is full
+        }
+        
     }
     return <span className="colorCircle" style={{backgroundColor: hex}} onClick={handleToggle}></span>
 }

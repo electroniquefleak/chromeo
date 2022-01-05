@@ -4,11 +4,10 @@ import { Link } from 'react-router-dom';
 const Landing = () => {
     return (
         <>
-        <h1>CHROMEO</h1>
-        <h2>A web visualizer and music discoverability application using the Spotify API.</h2>
-        <p>Based on the perceptual phenomenon of chromesthesia (or sound-to-color synesthesia), a cognitive trait where individuals experience visual iterations of auditory experiences.</p>
-        <Link to="/signup"><Button variant="contained">Sign-up</Button></Link>
-        <Link to="/login"><Button variant="contained">Login</Button></Link>
+        <h1 className='header1'>CHROMEO</h1>
+        <h2 className='header2'>A web visualizer and music discoverability application using the Spotify API.</h2>
+        <Link to="/signup" className='signupButton'><Button variant="contained" style={{ background: '#EB984E' }}>Sign-up</Button></Link>
+        <Link to="/login" className='loginButton'><Button variant="contained" style={{ background: '#EB984E' }}>Login</Button></Link>
         </>
     )
 }

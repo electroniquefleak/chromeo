@@ -1,37 +1,86 @@
 .colorCircle {
     display: inline-flex;
+    text-align: center;
     height: 100px;
     width: 100px;
     border-radius: 50%;
-    margin: 1rem;
+    margin: 0.5rem;
     box-shadow:
         inset 0 0 2px 0 rgba(255,255,255,.4),
         inset 0 0 3px 0 rgba(0,0,0,.4),
         inset 0 0 3px 5px rgba(0,0,0,.05),
         2px 2px 4px 0 rgba(0,0,0,.25);
-}
-
-.activeColor {
-    background-color: black;
 }
 
 body {
-    padding-top: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin:0;
+    height:100vh;
+    background:
+      linear-gradient(to right,transparent 33%,rgb(254, 255, 174),transparent 66%),
+      url(https://img.itch.zone/aW1nLzE1MDYwNzMucG5n/original/4Ugh2a.png) center;
+    background-size:300% 100%,cover;
+    animation:change 3s linear;
+  }
+  
+  @keyframes change {
+    from { /*Use "to" to change the direction */
+      background-position:right,center;
+    }
+  }
+  
+  html {
+   background:#fff;
+  }
+
+  .header1 {
+      padding-top: 100px;
+      text-align: center;
+      animation: pop-in .6s ease-out forwards;
+  }
+
+  @keyframes pop-in {
+    0% {
+      opacity: 0;
+      transform: translateY(-4rem) scale(.8);
+    }
+    100% {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .header2 {
+    text-align: center;
+    animation: pop-in .6s ease-out forwards;
 }
 
-.Navbar {
-    background-color: lightgrey;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 80px;
-    box-shadow:
-        inset 0 0 2px 0 rgba(255,255,255,.4),
-        inset 0 0 3px 0 rgba(0,0,0,.4),
-        inset 0 0 3px 5px rgba(0,0,0,.05),
-        2px 2px 4px 0 rgba(0,0,0,.25);
-}
+  .signupButton {
+    text-decoration-color: white;
+    padding-bottom: 100px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .loginButton {
+    text-decoration-color: white;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .wheel {
+      background: url(https://img.itch.zone/aW1hZ2UvMzA1MTEyLzE0OTY3MzMucG5n/original/Hpi%2B55.png)
+  }
+
+  .easel {
+      background: url(https://img.itch.zone/aW1hZ2UvMzA1MTEyLzE0OTY3MjAucG5n/original/wUVsQ4.png)
+  }

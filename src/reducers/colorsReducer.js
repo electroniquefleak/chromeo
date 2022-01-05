@@ -66,11 +66,11 @@ const initialState = {
 const colorsReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'TOGGLE_COLOR':
-            return state.colors.map(color => {
-                if (color.id = action.payload){
-                    // toggle
+            return state.map(color => {
+                if (color.id === action.payload){
+                    return { ...color, isSelected: !color.isSelected}
                 } else {
-                    // return as is (unchanged)
+                    return color
                 }
             })
         default:
