@@ -9,12 +9,14 @@ import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from "redux-thunk";
 import playlistReducer from './reducers/playlistReducer';
 import colorsReducer from './reducers/colorsReducer';
+import tokenReducer from './reducers/tokenReducer';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 const rootReducer = combineReducers({
     colors: colorsReducer,
-    playlist: playlistReducer
+    playlist: playlistReducer,
+    token: tokenReducer,
   }
 );
 
