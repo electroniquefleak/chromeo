@@ -14,7 +14,7 @@ const ColorWheel = ({colors}) => {
             {unselectedColors}
             </Paper>
             <h2 className="easelHeader">Easel:</h2>
-            <Paper className="easel" elevation={10}>
+            <Paper className="easel" elevation={10} square={false}>
             {selectedColors}
             </Paper>
         </>
