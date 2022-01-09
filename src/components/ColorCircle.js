@@ -1,18 +1,45 @@
+import { useState } from 'react';
 import fetchTracks from "../actions/fetchTracks";
 import toggleCircle from '../actions/toggleCircle'
 import { connect } from "react-redux";
+import Snackbar from '@mui/material/Snackbar';
 
 const ColorCircle = ({ id, hex, enabled, toggleCircle, fetchTracks}) => {
+    const [open, setOpen] = useState(false);
+
+    const handleSnack = () => {
+      setOpen(true);
+    };
+  
+    const handleClose = (event, reason) => {
+      if (reason === 'clickaway') {
+        return;
+      }
+  
+      setOpen(false);
+    };
+    
     const handleToggle = () => {
         if (enabled) {
             toggleCircle(id);
-        //also fetch the tracks (TODO)
+            fetchTracks();
         } else {
-            // use the Snackbar to tell the user it is full
+            fetchTracks();
+            handleSnack();
         }
         
     }
-    return <span className="colorCircle" style={{backgroundColor: hex}} onClick={handleToggle}></span>
+    return (
+    <>
+        <span className="colorCircle" style={{backgroundColor: hex}} onClick={handleToggle}></span>
+        <Snackbar
+            autoHideDuration={6000}
+            open={open}
+            onClose={handleClose}
+            message="Cannot select anymore colors."
+        />
+    </>
+    );
 }
 
 export default connect(null, {fetchTracks, toggleCircle})(ColorCircle);
