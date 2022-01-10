@@ -24,7 +24,6 @@ const ColorCircle = ({ id, hex, enabled, toggleCircle, fetchTracks}) => {
             toggleCircle(id);
             fetchTracks();
         } else {
-            fetchTracks();
             handleSnack();
         }
         

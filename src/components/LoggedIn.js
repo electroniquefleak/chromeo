@@ -6,12 +6,12 @@ import setToken from "../actions/setToken";
 const LoggedIn = ({setToken}) => {
     let navigate = useNavigate();
     const params = useParams();
-    const token = params.id
+    const hash =  window.location.hash.split("=");
+    const token = hash[1].split("&")[0];
     setToken(token)
     useEffect(() => {
-        // consider pointing the token in localStorage: window.localStorage.setItem('token', token)
         navigate("/dashboard");
-    }, [navigate])
+    }, [navigate, params])
 
     return null;
 }

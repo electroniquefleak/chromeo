@@ -11,7 +11,7 @@ function App() {
   return (
   <Routes>
     <Route path="/" element={<Landing />} />
-    <Route path='/token/:id' element={<LoggedIn />} />
+    <Route path='/token/' element={<LoggedIn />} />
     <Route path="/signup" element={<Signup />} />
     <Route path="/login" element={<Login />} />
     <Route path="/dashboard" element={<Dash />} />
