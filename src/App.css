@@ -77,6 +77,14 @@ html {
   transform: translate(-50%, -50%);
 }
 
+.spotifyButton {
+  padding-top: 160px;
+}
+
+.spotifyLogoutButton {
+  padding-top: 20px;
+}
+
 .wheel {
   background: url(https://img.itch.zone/aW1hZ2UvMzA1MTEyLzE0OTY3MzMucG5n/original/Hpi%2B55.png)
 }
@@ -92,5 +100,9 @@ html {
 
 .easelHeader {
   text-align: center;
+  padding-top: 20px;
+}
+
+.trackCards {
   padding-top: 20px;
 }
