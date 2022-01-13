@@ -19,7 +19,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <h1 align="center">:music:CHROMEO</h1>
+  <h1 align="center">💿 CHROMEO</h1>
   </a>
 
   <p align="center">
