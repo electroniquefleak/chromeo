@@ -10,6 +10,8 @@ import thunk from "redux-thunk";
 import playlistReducer from './reducers/playlistReducer';
 import colorsReducer from './reducers/colorsReducer';
 import tokenReducer from './reducers/tokenReducer';
+import libraryReducer from './reducers/libraryReducer';
+import userReducer from './reducers/userReducer';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
@@ -17,6 +19,8 @@ const rootReducer = combineReducers({
     colors: colorsReducer,
     playlist: playlistReducer,
     token: tokenReducer,
+    library: libraryReducer,
+    user: userReducer,
   }
 );
 
