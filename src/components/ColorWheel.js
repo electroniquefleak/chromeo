@@ -4,17 +4,19 @@ import ColorCircle from "./ColorCircle";
 
 const ColorWheel = ({colors}) => {
 
-    const selectedColors = colors.filter(color => color.isSelected).map(color =><ColorCircle key={color.id} id={color.id} hex={color.hex} enabled={true} />)
-    const unselectedColors = colors.filter(color => !color.isSelected).map(color =><ColorCircle key={color.id} id={color.id} hex={color.hex} enabled={selectedColors.length < 5 } />)
+    const selectedColors = colors.filter(color => color.isSelected)
+        .map(color =><ColorCircle key={color.id} id={color.id} hex={color.hex} enabled={true} message={color.message}/>)
+    const unselectedColors = colors.filter(color => !color.isSelected)
+        .map(color =><ColorCircle key={color.id} id={color.id} hex={color.hex} enabled={selectedColors.length < 5 } message={color.message} />)
 
     return (
         <>
-            <h2 className="wheelHeader">Color Wheel:</h2>
-            <Paper className="wheel" elevation={10} square={false}>
+            <h4 className="wheelHeader">Select a color to get started.</h4>
+            <Paper className="wheel" elevation={10}>
             {unselectedColors}
             </Paper>
-            <h2 className="easelHeader">Easel:</h2>
-            <Paper className="easel" elevation={10} square={false}>
+            <h4 className="easelHeader">Selected colors:</h4>
+            <Paper className="easel" elevation={10}>
             {selectedColors}
             </Paper>
         </>

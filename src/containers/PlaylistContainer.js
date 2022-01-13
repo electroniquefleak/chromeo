@@ -1,7 +1,6 @@
 import { Stack, Divider, Paper } from "@mui/material";
 import { connect } from "react-redux";
 import TrackCard from "../components/TrackCard";
-
 import { styled } from '@mui/material/styles';
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -25,6 +24,7 @@ const PlaylistContainer = ({playlist}) => {
                         <Item key={track.id}>
                             <TrackCard
                                 title={track.title}
+                                explicit={track.explicit}
                                 artist={track.artist}
                                 length={track.length}
                                 art={track.art}
