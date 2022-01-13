@@ -25,7 +25,7 @@
   <p align="center">
     A web visualizer and music discoverability application using the Spotify API.
     <br />
-        ·  </p>
+    </p>
 </p>
 
 
@@ -61,14 +61,14 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This is a demo application for Flatiron School's Phase 3 project cycle.
+This is a demo application for Flatiron School's Phase 5 project cycle.
 
-While determining the best method to exhibit my compounded knowledge of Rails, I wanted my project to emulate a real world example of how to demonstrate object-oriented programming.
+While determining the best method to exhibit my compounded knowledge of Rails, JavaScript, and React, I wanted my project to emulate a real world example of how to demonstrate object-oriented programming.
 
-Using object-oriented patterns within the Rails framework, I chose something that was both personal to me; and a user utilizing my application: I created an application with my uncle's commercial painting business in mind - Paragon Painting & Waterproofing.
+Using object-oriented patterns within the Rails framework to connect with my React frontend, I chose something that was both personal to me; and a user utilizing my application: The universal love of music discovery.
 
 Here's why:
-* 
+* There aren't many music discoverability applications that provide the users with unique experiences.
 * 
 * 
 
