@@ -106,3 +106,7 @@ html {
 .trackCards {
   padding-top: 20px;
 }
+
+.albumArt {
+  height: 90px;
+}
