@@ -11,7 +11,7 @@ import { connect } from 'react-redux';
 import { logout } from '../actions/userActions'
 
 
-function ButtonAppBar({logout}) {
+function ButtonAppBar({button, logout}) {
   const navigate = useNavigate()
   const handleLogout = () => {
     logout();
@@ -19,7 +19,7 @@ function ButtonAppBar({logout}) {
   }
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar style={{ background: '#EB984E' }} position="static">
+      <AppBar style={{ background: '#131F2B' }} position="static">
         <Toolbar>
           <IconButton
             size="medium"
@@ -31,12 +31,12 @@ function ButtonAppBar({logout}) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            <Link to="/"><Button style={{ background: '#4682b4' }} variant="contained">Home</Button></Link>
+            <Button className="homeButton" href="/" style={{ background: '#212F3D' }} variant="contained">Home</Button>
           </Typography>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            <Link to="/playlists"><Button style={{ background: '#4682b4' }} variant="contained">Playlists</Button></Link>
+            {button}
           </Typography>
-            <Button style={{ background: '#4682b4' }} variant="contained" onClick={handleLogout}>Logout</Button>
+            <Button className="logoutButton" style={{ background: '#212F3D' }} variant="contained" onClick={handleLogout}>Logout</Button>
         </Toolbar>
       </AppBar>
     </Box>

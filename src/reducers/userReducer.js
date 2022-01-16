@@ -1,11 +1,11 @@
-const userReducer = (state = {userId: "", userToken: ""}, action) => {
+const userReducer = (state = {userID: "", userToken: ""}, action) => {
     switch (action.type) {
         case 'SET_USER':
-            return {...state, userId: action.userId, userToken: action.userToken };
+            return {...state, userID: action.userID, userToken: action.userToken };
         case 'LOGOUT':
-            return {...state, userId: "", userToken: ""};
+            return {...state, userID: "", userToken: ""};
         default:
-            return state;
+            return {...state};
     }
 }
 

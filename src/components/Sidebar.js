@@ -29,7 +29,7 @@ const Sidebar = ({ library, fetchLibrary, fetchTracksChromeo }) => {
         variant="permanent"
         anchor="right"
       >
-        <Toolbar>
+        <Toolbar style={{ color: '#FFFFFF', background: '#131F2B' }}>
             <Typography noWrap component="div">
               My Library
             </Typography>
@@ -40,7 +40,7 @@ const Sidebar = ({ library, fetchLibrary, fetchTracksChromeo }) => {
             <ListItem button key={playlist.playlistID}>
               <ListItemText primary={playlist.playlistName} onClick={() => fetchTracksChromeo(playlist.playlistID)}/>
             </ListItem>
-          )): <h2>Nothing in your library.  Create a new playlist!</h2>}
+          )): <p>Nothing in your library.  Create a new playlist!</p>}
         </List>
       </Drawer>
   );

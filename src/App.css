@@ -18,9 +18,9 @@ body {
   margin: 0;
   height: 100vh;
   background:
-    linear-gradient(to right,transparent 33%,rgb(254, 255, 174),transparent 66%),
-    url(https://img.itch.zone/aW1nLzE1MDYwNzMucG5n/original/4Ugh2a.png) center;
-    background-size:300% 100%,cover;
+    linear-gradient(to right, transparent 33%, rgb(233, 248, 255), transparent 66%),
+    url(https://i.ytimg.com/vi/WRWDhzTbygI/maxresdefault.jpg) center;
+    background-size: 300% 100%, cover;
     animation:change 3s linear;
 }
   
@@ -31,7 +31,8 @@ body {
   }
   
 html {
-  background:#fff;
+  color: white;
+  background:#000000;
 }
 
 .header1 {
@@ -85,12 +86,60 @@ html {
   padding-top: 20px;
 }
 
+.playlistButton {
+  text-decoration-color: white;
+}
+
+.homeButton {
+  text-decoration-color: white;
+}
+
+.savePLButton {
+  text-decoration-color: white;
+  padding-bottom: 100px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.formBtn1 {
+  text-decoration-color: white;
+}
+
+.formBtn2 {
+  text-decoration-color: white;
+}
+
+.Nav1 {
+  width: 100%
+}
+
+.dashButton {
+  text-decoration-color: white;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.logoutButton {
+  text-decoration-color: white;
+}
+
+.dashBtn {
+  text-decoration-color: white;
+  padding-top: 20px;
+}
+
 .wheel {
-  background: url(https://img.itch.zone/aW1hZ2UvMzA1MTEyLzE0OTY3MzMucG5n/original/Hpi%2B55.png)
 }
 
 .easel {
-  background: url(https://img.itch.zone/aW1hZ2UvMzA1MTEyLzE0OTY3MjAucG5n/original/wUVsQ4.png)
 }
 
 .wheelHeader {

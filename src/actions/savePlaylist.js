@@ -1,13 +1,11 @@
 const savePlaylist = (name, tracksArr) => {
     const url = process.env.REACT_APP_ENDPOINT;
     return (dispatch) => {
-        console.log({tracksArr});
         const playlist = {
             name: name,
             tracks: tracksArr,
             user_id: localStorage.getItem("userID")
         }
-        console.log({playlist});
         fetch(url + "playlists", {
             method: 'POST',
             headers: {

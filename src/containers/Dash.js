@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import ColorWheel from "../components/ColorWheel";
 import Navbar from "../components/Navbar";
 import PlaylistContainer from "./PlaylistContainer";
-import { authEndpoint, clientId, redirectUri } from "../services/spotify_setup";
+import { authEndpoint, clientId, redirectUri, scopes } from "../services/spotify_setup";
 import { useNavigate } from "react-router";
 import resetColors from "../actions/resetColors";
 import savePlaylist from "../actions/savePlaylist";
@@ -43,26 +43,40 @@ const Dash = ({ playlist, colors, resetColors, savePlaylist }) => {
         savePlaylist(name, playlist.tracks)
         navigate('/playlists')
     }
+    const spotifyURL = `${authEndpoint}client_id=${clientId}&redirect_uri=${redirectUri}&scopes=${scopes.join("%20")}&response_type=token&show_dialog=true`;
+    console.log({spotifyURL});
+    const button = <Button className="playlistButton" style={{ background: '#212F3D' }} variant="contained">Playlists</Button>
     const spotifyBtn = (
-            <div className='spotifyButton' style={{display:'flex',justifyContent:'center', color:'white', textDecoration:'none', justifyItems:'center'}}>
-                <Button variant="contained" size="large" style={{width:'calc(100%/3)', background: '#FFFFFF', color:'black', textDecoration:'none'}} href={`${authEndpoint}client_id=${clientId}&redirect_uri=${redirectUri}&response_type=token&show_dialog=true`}>
+            <div className='spotifyButton' style={{display:'flex',justifyContent:'center', color:'white', textDecoration:'white', justifyItems:'center'}}>
+                <Button 
+                    variant="contained" 
+                    size="large" 
+                    style={{width:'calc(100%/3)', background: '#222F3D', color:'white', textDecoration:'white'}} 
+                    href={spotifyURL}
+                >
                     Connect to Spotify
                 </Button>
             </div>);
     const spotifyLogoutBtn = (
         <div className='spotifyLogoutButton' style={{display:'flex',justifyContent:'center', color:'white', textDecoration:'none', justifyItems:'center'}}>
-            <Button variant="contained" size="large" style={{width:'calc(100%/3)', background: '#FFFFFF', color:'black', textDecoration:'none'}} onClick={disconnectSpotify}>
-                Disconnect from Spotify
+            <Button 
+                variant="contained"
+                size="large"
+                style={{width:'calc(100%/3)', background: '#222F3D', color:'white', textDecoration:'none'}} onClick={disconnectSpotify}
+                >
+                    Disconnect from Spotify
             </Button>
         </div>);
     return (
         <>
-            <Navbar />
+            <Navbar button={button}/>
             {hasSpotifyToken ? spotifyLogoutBtn : spotifyBtn}
             {showPlayListContainer ? (
                 <div>
                     <ColorWheel />
-                    <Button onClick={openModal}>Save to Library</Button>
+                    <div className='dashBtn' style={{display:'flex',justifyContent:'center', color:'white', textDecoration:'white', justifyItems:'center'}}>
+                    <Button onClick={openModal} size="large" style={{width:'calc(100%/3)', background: '#212F3D'}} variant="contained">Save to Library</Button>
+                    </div>
                     <PlaylistContainer />
                 </div>
             ) : hasSpotifyToken ? (
@@ -73,7 +87,7 @@ const Dash = ({ playlist, colors, resetColors, savePlaylist }) => {
              :
              (
                 <div>
-                    <h2>{playlist.error}</h2>
+                    <h4>{playlist.error}</h4>
                 </div>
             )
         }
@@ -84,7 +98,7 @@ const Dash = ({ playlist, colors, resetColors, savePlaylist }) => {
                 aria-describedby="modal-modal-description"
             >
                 <Box sx={style}>
-                    <Typography mb={2}>Save this playlist. Give it a name:</Typography>
+                    <Typography mb={2}>To save a playlist, you must give it a name.</Typography>
                     <form onSubmit={handleSubmit}>
                         <TextField
                             required
@@ -94,8 +108,8 @@ const Dash = ({ playlist, colors, resetColors, savePlaylist }) => {
                             value={name}
                             onChange={(event) => setName(event.target.value)}
                         />
-                        <Button onClick={handleClose}>Cancel</Button>
                         <Button type="submit">Save Playlist</Button>
+                        <Button onClick={handleClose}>Cancel</Button>
                     </form>
                 </Box>
             </Modal>

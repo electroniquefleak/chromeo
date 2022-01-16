@@ -1,87 +1,87 @@
 const initialColors = [
     {
         id: 1,
-        hex: '#FF0000',
+        hex: '#AB0034',
         isSelected: false,
         genre: 'classical',
-        message: 'Message goes here'
+        message: 'DEEP RED'
     },
     {
         id: 2,
-        hex: '#E67E22',
+        hex: '#FF0000',
         isSelected: false,
         genre: 'country',
-        message: 'Message goes here'
+        message: 'RED'
     },
     {
         id: 3,
-        hex: '#F4D03F',
+        hex: '#FF7F00',
         isSelected: false,
         genre: 'rock',
-        message: 'Message goes here'
+        message: 'ORANGE'
     },
     {
         id: 4,
-        hex: '#28B463',
+        hex: '#FFFF00',
         isSelected: false,
         genre: 'pop',
-        message: 'Message goes here'
+        message: 'YELLOW'
     },
     {
         id: 5,
-        hex: '#DDF0F3',
+        hex: '#33CC33',
         isSelected: false,
         genre: 'hip-hop',
-        message: 'Message goes here'
+        message: 'GREEN'
     },
     {
         id: 6,
-        hex: '#D4E6F1',
+        hex: '#C3F2FF',
         isSelected: false,
         genre: 'pop',
-        message: 'Message goes here'
+        message: 'SKY BLUE'
     },
     {
         id: 7,
-        hex: '#898DFC',
+        hex: '#8EC9FF',
         isSelected: false,
         genre: 'pop',
-        message: 'Message goes here'
+        message: 'BLUE'
     },
     {
         id: 8,
-        hex: '#9152FF',
+        hex: '#7F8BFD',
         isSelected: false,
         genre: 'pop',
-        message: 'Message goes here'
+        message: 'BRIGHT BLUE'
     },
     {
         id: 9,
-        hex: '#EAA4FF',
+        hex: '#9000FF',
         isSelected: false,
         genre: 'pop',
-        message: 'Message goes here'
+        message: 'VIOLET'
     },
     {
         id: 10,
-        hex: '#E95793',
+        hex: '#BB75FC',
         isSelected: false,
         genre: 'pop',
-        message: 'Message goes here'
+        message: 'LILAC'
     },
     {
         id: 11,
-        hex: '#C48787',
+        hex: '#A9677C',
         isSelected: false,
         genre: 'country',
-        message: 'Message goes here'
+        message: 'FLESH'
     },
     {
         id: 12,
-        hex: '#CF223C',
+        hex: '#B7468B',
         isSelected: false,
         genre: 'pop',
-        message: 'Message goes here'
+        message: 'ROSE'
     },
 ];
 const colorsReducer = (state = initialColors, action) => {
@@ -95,7 +95,7 @@ const colorsReducer = (state = initialColors, action) => {
                 }
             })
         case 'RESET_COLORS':
-            return initialColors
+            return [...initialColors]
         default:
             return [...state];
     }

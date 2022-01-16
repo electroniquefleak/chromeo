@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
 import { loginUser } from '../actions/userActions';
 import { connect } from 'react-redux';
 import { useNavigate } from 'react-router';
+import { FormControl, InputLabel, Input, FormHelperText } from '@mui/material';
+import { Button } from '@mui/material';
 
 
 const Login = ({ loginUser }) => {
@@ -22,24 +23,20 @@ const Login = ({ loginUser }) => {
     return (
         <>
         <h4>Log-in to use Chromeo's premier music discoverability features.</h4>
-
         <Form onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Email Address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" value={email} onChange={(event) => setEmail(event.target.value)} />
-                <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
-                </Form.Text>
-            </Form.Group>
+            <FormControl>
+                    <InputLabel>Email address</InputLabel>
+                    <Input type="email" placeholder="Enter email" value={email} onChange={(event) => setEmail(event.target.value)} />
+                    <FormHelperText id="my-helper-text">We'll never share your email.</FormHelperText>
+            </FormControl>
 
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" value={password} onChange={(event) => setPassword(event.target.value)}/>
-            </Form.Group>
+            <FormControl>
+                    <InputLabel>Password</InputLabel>
+                    <Input type="password" placeholder="Password" value={password} onChange={(event) => setPassword(event.target.value)} />
+                    <FormHelperText id="my-helper-text">We'll never share your password.</FormHelperText>
+            </FormControl><br/>
 
-            <Button variant="primary" type="submit">
-                Login
-            </Button>
+            <Button type="submit" variant="contained" style={{ background: '#131F2B' }}>Login</Button>
         </Form>
         </>
     )

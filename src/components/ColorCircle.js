@@ -44,7 +44,7 @@ const ColorCircle = ({ id, hex, enabled, toggleCircle, fetchTracksSpotify, messa
 
     return (
     <>
-        <span className="colorCircle" style={{backgroundColor: hex}} onClick={handleToggle} onMouseEnter={handlePopoverOpen} onMouseLeave={handlePopoverClose}></span>
+        <span className="colorCircle" style={{backgroundImage: `conic-gradient(from 0deg, #fff, ${hex})`}} onClick={handleToggle} onMouseEnter={handlePopoverOpen} onMouseLeave={handlePopoverClose}></span>
         <Snackbar
             autoHideDuration={1400}
             open={open}

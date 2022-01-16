@@ -1,9 +1,10 @@
 const url = process.env.REACT_APP_ENDPOINT;
+
 const setUser = (res, dispatch) => {
     if (res.ok) {
         res.json()
         .then(user => {
-            localStorage.userToken = user.token;
+            window.localStorage.userToken = user.token;
             window.localStorage.userID = user.user.id
             dispatch(
                 {
@@ -18,6 +19,7 @@ const setUser = (res, dispatch) => {
         .then(error => alert(error.errors))
     }
 }
+
 export const addUser = user => {
     return dispatch => fetch(url + "users", {
         method: 'POST',
@@ -29,6 +31,7 @@ export const addUser = user => {
     .then(res =>setUser(res, dispatch))
     .catch(error => alert(error))
 }
+
 export const loginUser = user => {
     return dispatch => fetch(url + "sessions", {
         method: 'POST',
@@ -40,6 +43,7 @@ export const loginUser = user => {
     .then(res =>setUser(res, dispatch))
     .catch(error => alert(error))
 }
+
 export const logout = () => {
     return dispatch => {
         localStorage.clear()

@@ -1,9 +1,12 @@
 import { useState } from 'react'
 import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+import { Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addUser } from '../actions/userActions'
 import { useNavigate } from 'react-router';
+import { FormControl, InputLabel, Input, FormHelperText } from '@mui/material';
+
 const Signup = ({addUser}) => {
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
@@ -19,23 +22,20 @@ const Signup = ({addUser}) => {
     return (
         <>
         <h4>Sign-up for Chromeo's premier music discoverability features.</h4>
-
         <Form onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Email Address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" value={email} onChange={(event) => setEmail(event.target.value)}/>
-                <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
-                </Form.Text>
-            </Form.Group>
+            <FormControl>
+                    <InputLabel>Email address</InputLabel>
+                    <Input type="email" placeholder="Enter email" value={email} onChange={(event) => setEmail(event.target.value)} />
+                    <FormHelperText id="my-helper-text">We'll never share your email.</FormHelperText>
+            </FormControl>
 
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" value={password} onChange={(event) => setPassword(event.target.value)}/>
-            </Form.Group>
-            <Button variant="primary" type="submit">
-                Submit
-            </Button>
+            <FormControl>
+                    <InputLabel>Password</InputLabel>
+                    <Input type="password" placeholder="Password" value={password} onChange={(event) => setPassword(event.target.value)} />
+                    <FormHelperText id="my-helper-text">We'll never share your password.</FormHelperText>
+            </FormControl><br/>
+
+            <Button type="submit" variant="contained" style={{ background: '#131F2B' }}>Sign-up</Button>
         </Form>
         </>
     )
