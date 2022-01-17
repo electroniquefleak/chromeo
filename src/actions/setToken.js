@@ -6,4 +6,5 @@ const setToken = token => {
         }
     )
 }
+
 export default setToken;

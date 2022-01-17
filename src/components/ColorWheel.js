@@ -26,4 +26,5 @@ const ColorWheel = ({colors}) => {
 const mapStateToProps = state => {
     return {colors: state.colors}
 }
+
 export default connect(mapStateToProps)(ColorWheel);

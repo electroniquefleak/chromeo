@@ -6,4 +6,5 @@ const toggleCircle = (colorID) => {
         }
     )
 }
+
 export default toggleCircle;

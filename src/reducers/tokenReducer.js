@@ -1,4 +1,3 @@
-// Saving of the token parsed by url
 const token = (state = '', action) => {
 	switch(action.type) {
 		case 'SET_TOKEN':
@@ -7,4 +6,5 @@ const token = (state = '', action) => {
 			return state
 	}
 }
+
 export default token;

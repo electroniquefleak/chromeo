@@ -12,13 +12,13 @@ const ColorCircle = ({ id, hex, enabled, toggleCircle, fetchTracksSpotify, messa
     const [anchorEl, setAnchorEl] = useState(null);
     const openPop = Boolean(anchorEl);
 
-  const handlePopoverOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
+    const handlePopoverOpen = (event) => {
+      setAnchorEl(event.currentTarget);
+    };
 
-  const handlePopoverClose = () => {
-    setAnchorEl(null);
-  };
+    const handlePopoverClose = () => {
+      setAnchorEl(null);
+    };
 
     const handleSnack = () => {
       setOpen(true);

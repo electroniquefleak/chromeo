@@ -17,21 +17,13 @@ function ButtonAppBar({button, logout}) {
     logout();
     navigate('/');
   }
+  
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar style={{ background: '#131F2B' }} position="static">
         <Toolbar>
-          <IconButton
-            size="medium"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            <Button className="homeButton" href="/" style={{ background: '#212F3D' }} variant="contained">Home</Button>
+            <Button className="homeButton" style={{ background: '#212F3D' }} variant="contained">Home</Button>
           </Typography>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             {button}
@@ -42,4 +34,5 @@ function ButtonAppBar({button, logout}) {
     </Box>
   );
 }
+
 export default connect(null,{logout})(ButtonAppBar);

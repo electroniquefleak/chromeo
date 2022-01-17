@@ -11,7 +11,9 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 const PlaylistContainer = ({playlist}) => {
+
     const {playlistName: name, tracks} = playlist;
+
     return (
         <>
             {name && <h1>{name}</h1>}
@@ -36,7 +38,9 @@ const PlaylistContainer = ({playlist}) => {
         </>
     )
 }
+
 const mapStateToProps = state => {
     return {playlist: state.playlist}
 }
+
 export default connect(mapStateToProps)(PlaylistContainer);

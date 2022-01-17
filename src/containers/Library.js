@@ -10,7 +10,6 @@ import { connect } from 'react-redux';
 import resetPlaylist from '../actions/resetPlaylist'
 import { useEffect } from 'react';
 import Button from '@mui/material/Button';
-import SpotifyPlayer from 'react-spotify-web-playback';
 import Navbar from '../components/Navbar';
 
 const drawerWidth = 240;
@@ -20,7 +19,7 @@ const Library = ({ resetPlaylist }) => {
     resetPlaylist()
   }, [resetPlaylist])
 
-const buttonVariant = <Button className="playlistButton" variant="contained" style={{ background: '#131f2b', textDecoration: 'white' }}>Create a new playlist</Button>
+const buttonVariant = <Link to="/dashboard"><Button className="playlistButton" variant="contained" style={{ background: '#131f2b', textDecoration: 'white' }}>Create a new playlist</Button></Link>
 
     return (
         <Box sx={{ display: 'flex' }}>

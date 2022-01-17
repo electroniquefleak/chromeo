@@ -19,6 +19,7 @@ const Signup = ({addUser}) => {
         })
         navigate('/dashboard')
     }
+    
     return (
         <>
         <h4>Sign-up for Chromeo's premier music discoverability features.</h4>

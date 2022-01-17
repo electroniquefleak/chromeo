@@ -44,4 +44,5 @@ const fetchTracksSpotify = () => {
 
     }
 }
+
 export default fetchTracksSpotify;

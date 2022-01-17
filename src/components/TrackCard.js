@@ -17,4 +17,5 @@ const TrackCard = ({ title, artist, length, art, explicit }) => {
         </div>
     )
 }
+
 export default TrackCard;

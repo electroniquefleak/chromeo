@@ -16,6 +16,7 @@ const Sidebar = ({ library, fetchLibrary, fetchTracksChromeo }) => {
     useEffect(() => {
         fetchLibrary()
     }, [fetchLibrary])
+
   return (
       <Drawer
         sx={{
@@ -49,4 +50,5 @@ const Sidebar = ({ library, fetchLibrary, fetchTracksChromeo }) => {
 const mapStateToProps = state => {
     return {library: state.library}
 }
+
 export default connect(mapStateToProps, {fetchLibrary, fetchTracksChromeo})(Sidebar);

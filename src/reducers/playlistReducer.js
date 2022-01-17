@@ -1,4 +1,5 @@
 const initialState = {playlistID: null, playlistName: null, tracks: [], error: ''};
+
 const playlistReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'FETCH_TRACKS_CHROMEO':
