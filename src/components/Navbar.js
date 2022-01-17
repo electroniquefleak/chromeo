@@ -4,8 +4,6 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
 import { Link, useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logout } from '../actions/userActions'
@@ -17,13 +15,13 @@ function ButtonAppBar({button, logout}) {
     logout();
     navigate('/');
   }
-  
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar style={{ background: '#131F2B' }} position="static">
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            <Button className="homeButton" style={{ background: '#212F3D' }} variant="contained">Home</Button>
+            <Link to="/" style={{textDecoration: 'none'}}><Button className="homeButton" style={{ background: '#212F3D' }} variant="contained">Home</Button></Link>
           </Typography>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             {button}

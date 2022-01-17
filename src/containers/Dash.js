@@ -8,6 +8,7 @@ import { useNavigate } from "react-router";
 import resetColors from "../actions/resetColors";
 import savePlaylist from "../actions/savePlaylist";
 import { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
 
 const style = {
     position: 'absolute',
@@ -48,7 +49,7 @@ const Dash = ({ playlist, colors, resetColors, savePlaylist }) => {
 
     const spotifyURL = `${authEndpoint}client_id=${clientId}&redirect_uri=${redirectUri}&response_type=token&show_dialog=true`;
 
-    const playlistsButton = <Button className="playlistsButton" style={{ background: '#212F3D' }} variant="contained">Playlists</Button>
+    const playlistsButton = <Link to="/playlists"><Button className="playlistsButton" style={{ background: '#212F3D' }} variant="contained">Playlists</Button></Link>
 
     const spotifyBtn = (
             <div className='spotifyButton' style={{display:'flex',justifyContent:'center', color:'white', textDecoration:'white', justifyItems:'center'}}>

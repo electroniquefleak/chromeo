@@ -16,7 +16,7 @@ const PlaylistContainer = ({playlist}) => {
 
     return (
         <>
-            {name && <h1>{name}</h1>}
+            {name && <h3>{name}</h3>}
             <Stack className="trackCards" 
                 divider={<Divider orientation="horizontal" flexItem />}
                 spacing={2}

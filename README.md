@@ -104,15 +104,15 @@ To get a local copy up and running follow these simple example steps.
     git clone https://github.com/electroniquefleak/chromeo.git
     git clone https://github.com/electroniquefleak/chromeo_backend.git
    ```
-2. Install NPM packages
+2. Install NPM packages on frontend library
    ```sh
    npm install
    ```
-3. Install gems
+3. Install gems on backend library
    ```sh
    bundle install
    ```
-4. Migrate database
+4. Migrate database on backend library
    ```sh
    rails db:migrate
    ```
@@ -143,7 +143,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Hunter Fleak - fleakhunter@gmail.com
 
-Project Link: [https://github.com/electroniquefleak/chromeo/](https://github.com/electroniquefleak/chromeo/)
+Project Link: [https://github.com/electroniquefleak/chromeo/](https://github.com/electroniquefleak/chromeo/)[https://github.com/electroniquefleak/chromeo-backend/](https://github.com/electroniquefleak/chromeo-backend/)
 
 
 

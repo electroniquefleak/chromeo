@@ -2,7 +2,6 @@ import Sidebar from '../components/Sidebar';
 import Toolbar from '@mui/material/Toolbar';
 import Box from '@mui/material/Box';
 import AppBar from '@mui/material/AppBar';
-import Typography from '@mui/material/Typography';
 import { CssBaseline } from '@mui/material';
 import PlaylistContainer from './PlaylistContainer';
 import { Link } from 'react-router-dom';
@@ -19,7 +18,7 @@ const Library = ({ resetPlaylist }) => {
     resetPlaylist()
   }, [resetPlaylist])
 
-const buttonVariant = <Link to="/dashboard"><Button className="playlistButton" variant="contained" style={{ background: '#131f2b', textDecoration: 'white' }}>Create a new playlist</Button></Link>
+const buttonVariant = <Link to="/dashboard" style={{textDecoration: 'none'}}><Button className="playlistButton" variant="contained" style={{ background: '#131f2b', textDecoration: 'white' }}>Create a new playlist</Button></Link>
 
     return (
         <Box sx={{ display: 'flex' }}>

@@ -159,3 +159,8 @@ html {
 .albumArt {
   height: 90px;
 }
+
+.explicitBtn span:first-child {
+  border-style: solid;
+  border: red;
+}
