@@ -1,20 +1,13 @@
-import { style } from "@mui/system";
-import millisToMinutesAndSeconds from "../services/duration_helper";
-
-const TrackCard = ({ title, artist, length, art, explicit }) => {
+const TrackCard = ({ spotifyID }) => {
     return (
         <div className="trackCard">
-            <div>
-            {art && <img className="albumArt" src={art} alt="album art"/>}
-            </div>
-            <div>
-                <b><span>{explicit && "EXPLICIT"}</span><br />
-                {title}</b>
-            </div>
-            <div>
-                <p>{artist}</p>
-                <span>{millisToMinutesAndSeconds(length)}</span>
-            </div>
+           <iframe 
+            src={`https://open.spotify.com/embed/track/${spotifyID}`}
+            width="100%" 
+            height="80" 
+            frameBorder="0" 
+            allowtransparency="true" 
+            allow="encrypted-media"></iframe>
         </div>
     )
 }

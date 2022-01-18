@@ -49,19 +49,19 @@ const Dash = ({ playlist, colors, resetColors, savePlaylist }) => {
 
     const spotifyURL = `${authEndpoint}client_id=${clientId}&redirect_uri=${redirectUri}&response_type=token&show_dialog=true`;
 
-    const playlistsButton = <Link to="/playlists"><Button className="playlistsButton" style={{ background: '#212F3D' }} variant="contained">Playlists</Button></Link>
+    const playlistsButton = <Link to="/playlists" style={{textDecoration: 'none'}}><Button className="playlistsButton" style={{ background: '#212F3D' }} variant="contained">Playlists</Button></Link>
 
     const spotifyBtn = (
             <div className='spotifyButton' style={{display:'flex',justifyContent:'center', color:'white', textDecoration:'white', justifyItems:'center'}}>
                 <Button variant="contained" size="large" style={{width:'calc(100%/3)', background: '#222F3D', color:'white', textDecoration:'white'}} href={spotifyURL}>
-                    Connect to Spotify
+                    <img className='thumbnail' src={"https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/2048px-Spotify_logo_without_text.svg.png"} width={33} height={33}/>Connect to Spotify
                 </Button>
             </div>);
 
     const spotifyLogoutBtn = (
         <div className='spotifyLogoutButton' style={{display:'flex',justifyContent:'center', color:'white', textDecoration:'none', justifyItems:'center'}}>
             <Button variant="contained" size="large" style={{width:'calc(100%/3)', background: '#222F3D', color:'white', textDecoration:'none'}} onClick={disconnectSpotify}>
-                    Disconnect from Spotify
+                <img className='thumbnail' src={"https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/2048px-Spotify_logo_without_text.svg.png"} width={33} height={33}/>Disconnect from Spotify
             </Button>
         </div>);
 
@@ -70,7 +70,7 @@ const Dash = ({ playlist, colors, resetColors, savePlaylist }) => {
             <Navbar button={playlistsButton}/>
             {hasSpotifyToken ? spotifyLogoutBtn : spotifyBtn}
             {showPlayListContainer ? (
-                <div>
+                <div className="dash">
                     <ColorWheel />
                     <div className='dashBtn' style={{display:'flex',justifyContent:'center', color:'white', textDecoration:'white', justifyItems:'center'}}>
                     <Button onClick={openModal} size="large" style={{width:'calc(100%/3)', background: '#212F3D'}} variant="contained">Save to Library</Button>
@@ -78,13 +78,13 @@ const Dash = ({ playlist, colors, resetColors, savePlaylist }) => {
                     <PlaylistContainer />
                 </div>
             ) : hasSpotifyToken ? (
-                <div>
+                <div className="dash">
                     <ColorWheel />
                 </div>
             )
              :
              (
-                <div>
+                <div className="dash">
                     <h4>{playlist.error}</h4>
                 </div>
             )

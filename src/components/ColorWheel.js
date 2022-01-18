@@ -12,11 +12,11 @@ const ColorWheel = ({colors}) => {
     return (
         <>
             <h4 className="wheelHeader">Select a color to get started.</h4>
-            <Paper className="wheel" elevation={10}>
+            <Paper style={{background: '#fafdff'}} className="wheel" elevation={10}>
             {unselectedColors}
             </Paper>
             <h4 className="easelHeader">Selected colors:</h4>
-            <Paper className="easel" elevation={10}>
+            <Paper style={{background: '#fafdff'}} className="easel" elevation={10}>
             {selectedColors}
             </Paper>
         </>

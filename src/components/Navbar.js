@@ -18,7 +18,7 @@ function ButtonAppBar({button, logout}) {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar style={{ background: '#131F2B' }} position="static">
+      <AppBar className="navigationBar" style={{ background: '#131F2B' }} position="static">
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <Link to="/" style={{textDecoration: 'none'}}><Button className="homeButton" style={{ background: '#212F3D' }} variant="contained">Home</Button></Link>

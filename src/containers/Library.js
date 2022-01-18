@@ -18,7 +18,7 @@ const Library = ({ resetPlaylist }) => {
     resetPlaylist()
   }, [resetPlaylist])
 
-const buttonVariant = <Link to="/dashboard" style={{textDecoration: 'none'}}><Button className="playlistButton" variant="contained" style={{ background: '#131f2b', textDecoration: 'white' }}>Create a new playlist</Button></Link>
+    const buttonVariant = <Link to="/dashboard" style={{textDecoration: 'none'}}><Button className="playlistButton" variant="contained" style={{ background: '#131f2b', textDecoration: 'white' }}>Create a new playlist</Button></Link>
 
     return (
         <Box sx={{ display: 'flex' }}>
@@ -31,6 +31,7 @@ const buttonVariant = <Link to="/dashboard" style={{textDecoration: 'none'}}><Bu
         </AppBar>
         <Box
           component="main"
+          style={{background: 'rgba(0,0,0,0)'}}
           sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}
         >
           <Toolbar />

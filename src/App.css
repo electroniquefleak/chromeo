@@ -1,3 +1,23 @@
+html {
+  color: white;
+  background:#000000;
+}
+body {
+  margin: 0;
+  height: 100%;
+  min-height: 100vh;
+}
+#root {
+  background:
+    linear-gradient(to right, transparent 33%, rgb(233, 248, 255), transparent 66%),
+    url(https://i.ytimg.com/vi/WRWDhzTbygI/maxresdefault.jpg) center;
+  background-size: 300% 100%, cover;
+  animation:change 3s linear;
+  height: 100%;
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
 .colorCircle {
   display: inline-flex;
   text-align: center;
@@ -12,29 +32,16 @@
     2px 2px 4px 0 rgba(0,0,0,.25);
 }
 
-body {
-  padding-left: 20px;
-  padding-right: 20px;
-  margin: 0;
-  height: 100vh;
-  background:
-    linear-gradient(to right, transparent 33%, rgb(233, 248, 255), transparent 66%),
-    url(https://i.ytimg.com/vi/WRWDhzTbygI/maxresdefault.jpg) center;
-    background-size: 300% 100%, cover;
-    animation:change 3s linear;
-}
   
-  @keyframes change {
-    from { /*Use "to" to change the direction */
-      background-position:right,center;
-    }
+@keyframes change {
+  from { /*Use "to" to change the direction */
+    background-position:right,center;
   }
-  
-html {
-  color: white;
-  background:#000000;
 }
-
+  
+.dash {
+  padding: 0 20px;
+}
 .header1 {
   padding-top: 100px;
   text-align: center;
@@ -66,6 +73,12 @@ html {
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+.playlistNames {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
 }
 
 .loginButton {
@@ -134,12 +147,16 @@ html {
 .dashBtn {
   text-decoration-color: white;
   padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .wheel {
+  background-color: #E0F1F7;
+
 }
 
 .easel {
+  background-color: #e0f1f7;
 }
 
 .wheelHeader {
@@ -156,11 +173,36 @@ html {
   padding-top: 20px;
 }
 
+.trackCard {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.trackCard-title {
+  font-weight: 600;
+  font-size: 16px;
+}
+.trackCard-main {
+  flex-grow: 1;
+}
+.trackCard-artist {
+  margin-top: 5px;
+}
+
 .albumArt {
   height: 90px;
 }
 
-.explicitBtn span:first-child {
-  border-style: solid;
-  border: red;
+.explicit {
+  text-transform: uppercase;
+  border: 3px solid red;
+  padding: 3px;
+  color: red;
+  font-size: 0.6em;
+  margin-left: 5px;
+}
+
+.thumbnail {
+  margin-right: 8px;
 }
