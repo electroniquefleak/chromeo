@@ -10,6 +10,7 @@ import resetPlaylist from '../actions/resetPlaylist'
 import { useEffect } from 'react';
 import Button from '@mui/material/Button';
 import Navbar from '../components/Navbar';
+import Typography from '@mui/material/Typography';
 
 const drawerWidth = 240;
 
@@ -18,26 +19,27 @@ const Library = ({ resetPlaylist }) => {
     resetPlaylist()
   }, [resetPlaylist])
 
-    const buttonVariant = <Link to="/dashboard" style={{textDecoration: 'none'}}><Button className="playlistButton" variant="contained" style={{ background: '#131f2b', textDecoration: 'white' }}>Create a new playlist</Button></Link>
+    const buttonVariant = <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+      <Link to="/dashboard" style={{textDecoration: 'none'}}><Button className="playlistButton" variant="contained" style={{ background: '#212F3D', textDecoration: 'white' }}>Create a new playlist</Button></Link></Typography>
 
     return (
         <Box sx={{ display: 'flex' }}>
-        <CssBaseline />
-        <AppBar
-          position="fixed"
-          sx={{ width: `calc(100% - ${drawerWidth}px)`, mr: `${drawerWidth}px` }}
-        >
-          <Navbar button={buttonVariant}/>
-        </AppBar>
-        <Box
-          component="main"
-          style={{background: 'rgba(0,0,0,0)'}}
-          sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}
-        >
-          <Toolbar />
-            <PlaylistContainer />
-        </Box>
-        <Sidebar />
+          <CssBaseline />
+            <AppBar
+              position="fixed"
+              sx={{ width: `calc(100% - ${drawerWidth}px)`, mr: `${drawerWidth}px` }}
+            >
+              <Navbar button={buttonVariant}/>
+            </AppBar>
+            <Box
+              component="main"
+              style={{background: 'rgba(0,0,0,0)'}}
+              sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}
+            >
+              <Toolbar />
+                <PlaylistContainer />
+            </Box>
+          <Sidebar />
       </Box>
     )
 }

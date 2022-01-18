@@ -4,7 +4,6 @@ const fetchTracksChromeo = (playlistID) => {
         fetch(BASE_URL + playlistID)
         .then(res => res.json())
         .then(data => {
-            console.log({data})
             dispatch(
                 {
                     type: "FETCH_TRACKS_CHROMEO",

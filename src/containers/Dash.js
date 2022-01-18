@@ -9,6 +9,7 @@ import resetColors from "../actions/resetColors";
 import savePlaylist from "../actions/savePlaylist";
 import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
+import resetPlaylist from "../actions/resetPlaylist";
 
 const style = {
     position: 'absolute',
@@ -22,23 +23,25 @@ const style = {
     p: 4,
   };
 
-const Dash = ({ playlist, colors, resetColors, savePlaylist }) => {
+const Dash = ({ playlist, colors, resetColors, savePlaylist, resetPlaylist }) => {
     const [open, setOpen] = useState(false);
+    const [name, setName] = useState("");
+    const [token, setToken] = useState(localStorage.token);
     const handleClose = () => setOpen(false);
-    const openModal = () => setOpen(true)
-    const [name, setName] = useState("")
+    const openModal = () => setOpen(true);
 
     useEffect(() => {
+        resetPlaylist()
         resetColors()
-    }, [resetColors])
+    }, [resetPlaylist, resetColors])
+
     const navigate = useNavigate();
     const selectedColors = colors.filter(color => color.isSelected)
     const showPlayListContainer = playlist && playlist.tracks.length > 0 && selectedColors.length > 0;
-    const hasSpotifyToken = window.localStorage.getItem("token")
 
     const disconnectSpotify = () => {
         window.localStorage.removeItem("token")
-        navigate("/dashboard");
+        setToken('')
     }
 
     const handleSubmit = (e) => {
@@ -68,7 +71,7 @@ const Dash = ({ playlist, colors, resetColors, savePlaylist }) => {
     return (
         <>
             <Navbar button={playlistsButton}/>
-            {hasSpotifyToken ? spotifyLogoutBtn : spotifyBtn}
+            {token ? spotifyLogoutBtn : spotifyBtn}
             {showPlayListContainer ? (
                 <div className="dash">
                     <ColorWheel />
@@ -77,7 +80,7 @@ const Dash = ({ playlist, colors, resetColors, savePlaylist }) => {
                     </div>
                     <PlaylistContainer />
                 </div>
-            ) : hasSpotifyToken ? (
+            ) : token ? (
                 <div className="dash">
                     <ColorWheel />
                 </div>
@@ -122,4 +125,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { resetColors, savePlaylist })(Dash);
+export default connect(mapStateToProps, { resetColors, savePlaylist, resetPlaylist })(Dash);

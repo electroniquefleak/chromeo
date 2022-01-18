@@ -5,7 +5,6 @@ const fetchLibrary = () => {
         fetch(BASE_URL + userId)
         .then(res => res.json())
         .then(data => {
-            console.log({data})
             dispatch(
                 {
                     type: "FETCH_LIBRARY",

@@ -16,9 +16,7 @@ const PlaylistContainer = ({playlist}) => {
 
     return (
         <>  
-            <Paper className="playlistNames" style={{background: '#fafdff'}} elevation={10}>
-            {name && <h3>{name}</h3>}
-            </Paper>
+        {name && <h3 className="playlistNames">{name}</h3>}
             <Stack className="trackCards" elevation={10}
                 divider={<Divider orientation="horizontal" flexItem />}
                 spacing={2}
