@@ -55,7 +55,7 @@ const Dash = ({ playlist, colors, resetColors, savePlaylist, resetPlaylist }) =>
     const playlistsButton = <Link to="/playlists" style={{textDecoration: 'none'}}><Button className="playlistsButton" style={{ background: '#212F3D' }} variant="contained">Playlists</Button></Link>
 
     const spotifyBtn = (
-            <div className='spotifyButton' style={{display:'flex',justifyContent:'center', color:'white', textDecoration:'white', justifyItems:'center'}}>
+            <div className='spotifyButton' style={{display:'flex', justifyContent:'center', color:'white', textDecoration:'white', justifyItems:'center'}}>
                 <Button variant="contained" size="large" style={{width:'calc(100%/3)', background: '#222F3D', color:'white', textDecoration:'white'}} href={spotifyURL}>
                     <img className='thumbnail' src={"https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/2048px-Spotify_logo_without_text.svg.png"} width={33} height={33}/>Connect to Spotify
                 </Button>

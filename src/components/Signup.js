@@ -21,8 +21,8 @@ const Signup = ({addUser}) => {
     
     return (
         <>
-        <h4>Sign-up for Chromeo's premier music discoverability features.</h4>
-        <Form onSubmit={handleSubmit}>
+        <Form className="signupForm" onSubmit={handleSubmit}>
+            <h4>Sign-up for Chromeo's premier music discoverability features.</h4>
             <FormControl>
                     <InputLabel>Email address</InputLabel>
                     <Input type="email" placeholder="Enter email" value={email} onChange={(event) => setEmail(event.target.value)} />

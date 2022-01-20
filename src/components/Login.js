@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { FormControl, InputLabel, Input, FormHelperText } from '@mui/material';
 import { Button } from '@mui/material';
+import { positions } from '@mui/system';
 
 
 const Login = ({ loginUser }) => {
@@ -22,8 +23,8 @@ const Login = ({ loginUser }) => {
     
     return (
         <>
-        <h4>Log-in to use Chromeo's premier music discoverability features.</h4>
-        <Form onSubmit={handleSubmit}>
+        <Form className="loginForm" onSubmit={handleSubmit}>
+            <h4>Log-in to use Chromeo's premier music discoverability features.</h4>
             <FormControl>
                     <InputLabel>Email address</InputLabel>
                     <Input type="email" placeholder="Enter email" value={email} onChange={(event) => setEmail(event.target.value)} />
@@ -36,7 +37,7 @@ const Login = ({ loginUser }) => {
                     <FormHelperText id="my-helper-text">We'll never share your password.</FormHelperText>
             </FormControl><br/>
 
-            <Button type="submit" variant="contained" style={{ background: '#131F2B' }}>Login</Button>
+            <Button className="formBtn1" type="submit" variant="contained" style={{ background: '#131F2B' }}>Login</Button>
         </Form>
         </>
     )
