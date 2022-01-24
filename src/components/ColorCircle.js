@@ -7,7 +7,7 @@ import { Popover } from '@mui/material';
 import { Typography } from '@mui/material';
 
 
-const ColorCircle = ({ id, hex, enabled, toggleCircle, fetchTracksSpotify, message}) => {
+const ColorCircle = ({ id, hex, enabled, toggleCircle, fetchTracksSpotify, message }) => {
     const [open, setOpen] = useState(false);
     const [anchorEl, setAnchorEl] = useState(null);
     const openPop = Boolean(anchorEl);

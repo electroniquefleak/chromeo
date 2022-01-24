@@ -18,15 +18,15 @@ function App({userToken}) {
   }, [userToken])
 
   return (
-  <Routes>
-    <Route path="/" element={<Landing />} />
-    <Route path="/signup" element={<Signup />} />
-    <Route path="/login" element={<Login />} />
-    <Route path='/token/' element={<LoggedIn />} />
-    <Route path="/dashboard" element={authenticated ? <Dash /> : <Login />} />
-    <Route path="/playlists" element={authenticated ? <Library /> : <Login />} />
-    <Route path="*" element={<Landing/>} />
-  </Routes>
+    <Routes>
+      <Route path="/" element={<Landing />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/login" element={<Login />} />
+      <Route path='/token/' element={<LoggedIn />} />
+      <Route path="/dashboard" element={authenticated ? <Dash /> : <Login />} />
+      <Route path="/playlists" element={authenticated ? <Library /> : <Login />} />
+      <Route path="*" element={<Landing/>} />
+    </Routes>
   );
 }
 
