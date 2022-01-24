@@ -1,6 +1,7 @@
+const url = process.env.REACT_APP_ENDPOINT;
+
 const savePlaylist = (name, tracksArr) => {
-    const url = process.env.REACT_APP_ENDPOINT;
-    return (dispatch) => {
+    return () => {
         const playlist = {
             name: name,
             tracks: tracksArr,

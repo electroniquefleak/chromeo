@@ -1,8 +1,8 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import { Button } from '@mui/material';
 import { connect } from 'react-redux';
-import { addUser } from '../actions/userActions'
+import { addUser } from '../actions/userActions';
 import { useNavigate } from 'react-router';
 import { FormControl, InputLabel, Input, FormHelperText } from '@mui/material';
 

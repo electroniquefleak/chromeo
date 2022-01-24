@@ -1,15 +1,15 @@
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { useEffect } from 'react';
 import Sidebar from '../components/Sidebar';
+import Navbar from '../components/Navbar';
+import PlaylistContainer from './PlaylistContainer';
+import resetPlaylist from '../actions/resetPlaylist'
 import Toolbar from '@mui/material/Toolbar';
 import Box from '@mui/material/Box';
 import AppBar from '@mui/material/AppBar';
 import { CssBaseline } from '@mui/material';
-import PlaylistContainer from './PlaylistContainer';
-import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import resetPlaylist from '../actions/resetPlaylist'
-import { useEffect } from 'react';
 import Button from '@mui/material/Button';
-import Navbar from '../components/Navbar';
 import Typography from '@mui/material/Typography';
 
 const drawerWidth = 240;

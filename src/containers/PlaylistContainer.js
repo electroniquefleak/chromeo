@@ -1,6 +1,6 @@
-import { Stack, Divider, Paper } from "@mui/material";
 import { connect } from "react-redux";
 import TrackCard from "../components/TrackCard";
+import { Stack, Divider, Paper } from "@mui/material";
 import { styled } from '@mui/material/styles';
 
 
@@ -17,9 +17,7 @@ const PlaylistContainer = ({playlist}) => {
     return (
         <>  
         {name && <h3 className="playlistNames">{name}</h3>}
-            <Stack className="trackCards" elevation={10}
-                divider={<Divider orientation="horizontal" flexItem />}
-                spacing={2}
+            <Stack className="trackCards" elevation={10} divider={<Divider orientation="horizontal" flexItem />} spacing={2}
             >
                 {tracks.map(track => {
                     return (

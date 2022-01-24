@@ -1,15 +1,15 @@
-import { Button, Box, Modal, TextField, Typography } from "@mui/material";
 import { connect } from "react-redux";
+import { Link } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 import ColorWheel from "../components/ColorWheel";
 import Navbar from "../components/Navbar";
-import PlaylistContainer from "./PlaylistContainer";
-import { authEndpoint, clientId, redirectUri } from "../services/spotify_setup";
-import { useNavigate } from "react-router";
 import resetColors from "../actions/resetColors";
 import savePlaylist from "../actions/savePlaylist";
-import { useEffect, useState } from "react";
-import { Link } from 'react-router-dom';
 import resetPlaylist from "../actions/resetPlaylist";
+import PlaylistContainer from "./PlaylistContainer";
+import { authEndpoint, clientId, redirectUri } from "../services/spotify_setup";
+import { Button, Box, Modal, TextField, Typography } from "@mui/material";
 
 const style = {
     position: 'absolute',

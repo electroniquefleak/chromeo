@@ -4,7 +4,7 @@ const initialColors = [
         hex: '#AB0034',
         isSelected: false,
         genre: 'romance',
-        message: "DEEP RED: All of the color selections are Based on Alexander Scriabin's clavier à lumières; DEEP RED represents the romance genre."
+        message: "DEEP RED: All of the color selections are Based on Alexander Scriabin's clavier à lumières; DEEP RED represents the ROMANCE genre."
     },
     {
         id: 2,

@@ -1,7 +1,7 @@
 import { useState } from 'react';
+import { connect } from "react-redux";
 import fetchTracksSpotify from "../actions/fetchTracksSpotify";
 import toggleCircle from '../actions/toggleCircle'
-import { connect } from "react-redux";
 import Snackbar from '@mui/material/Snackbar';
 import { Popover } from '@mui/material';
 import { Typography } from '@mui/material';

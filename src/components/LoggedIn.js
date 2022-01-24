@@ -1,5 +1,5 @@
-import { useEffect } from 'react'
-import { connect } from "react-redux"
+import { useEffect } from 'react';
+import { connect } from "react-redux";
 import { useParams, useNavigate } from "react-router-dom";
 import setToken from "../actions/setToken";
 

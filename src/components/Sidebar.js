@@ -5,9 +5,9 @@ import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import { connect } from 'react-redux';
-import Typography from '@mui/material/Typography'
+import Typography from '@mui/material/Typography';
 import { useEffect } from 'react';
-import fetchLibrary from '../actions/fetchLibrary'
+import fetchLibrary from '../actions/fetchLibrary';
 import fetchTracksChromeo from '../actions/fetchTracksChromeo';
 
 const drawerWidth = 240;
